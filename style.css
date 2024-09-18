@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #c974eb, #3354e7); 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 3px solid #0d0c0c;
+    border-radius: 10px;
+    background-color: #faf9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#entry-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#entry-form input[type="text"], #entry-form input[type="number"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#entry-form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: rgb(250, 247, 247);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#entry-form button:hover {
+    background-color: #218838;
+}
+
+#entries-list {
+    list-style: none;
+    padding: 0;
+}
+
+#entries-list li {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@keyframes continuousZoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.edit-btn, .delete-btn {
+    background-color: rgb(118, 62, 62);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    animation: continuousZoom 1s ease-in-out infinite;
+}
+
+.edit-btn {
+    background-color: green;
+}
+
+@keyframes flyAway {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+}
+
+#entry-form button.fly {
+    animation: flyAway 1s forwards;
+}
